@@ -57,7 +57,7 @@ class _HomePageState extends State<HomePage> {
         DateTime sixMothsAgo = DateTime(today.year, today.month - 6, today.day);
         DateTime firstDayofmonth = DateTime(today.year, today.month, 1);
         DateTime lastDayOfmonth = DateTime(today.year, today.month + 1, 0);
-        ;
+        
 
         //print(transactionalSMSList);
         parseTransactionalSms(var message) {
@@ -248,10 +248,10 @@ class _HomePageState extends State<HomePage> {
       } else if (sms.content == 'Dr') {
         // print('sms money : $sms.money ');
         setLimit -= double.parse(sms.money);
-        expense -= double.parse(sms.money);
+        expense += double.parse(sms.money);
       } else if (sms.content == 'debited') {
         setLimit -= double.parse(sms.money);
-        expense -= double.parse(sms.money);
+        expense += double.parse(sms.money);
       } else if (sms.content == 'credited') {
         setLimit += double.parse(sms.money);
         income += double.parse(sms.money);
